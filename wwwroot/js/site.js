@@ -9,12 +9,12 @@
         {
             "url": "/Customers/GetCustomers",
             "type": "POST",
-            "datatype": "json"
+            "datatype": "json",
         },
         "columnDefs": [{
             "target": [0],
             "visible": false,
-            "searchable": false
+            "searchable": false,
         }],
         "columns": [
             { "data": "id", "name": "Id", "autowidth": true },
@@ -22,11 +22,11 @@
             { "data": "lastName", "name": "LastName", "autowidth": true },
             { "data": "contact", "name": "Contact", "autowidth": true },
             { "data": "email", "name": "Email", "autowidth": true },
-            { "data": "dateofBirth", "name": "DateofBirth", "autowidth": true },
-            { "render": function () { return '<a href="#"  class="btn btn-danger"  onclick=DeleteCustomer("'+row.id+'") >Delete</a>' }, "orderable": false },
+            { "data": "birthDate", "name": "BirthDate", "autowidth": true },
+            { "render": function (data, type, row) { return '<a href="#"  class="btn btn-danger"  onclick=DeleteCustomer("' + row.id + '") >Delete</a>' }, "orderable": false },
 
 
-        ]
+        ],
     });
 
 

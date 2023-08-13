@@ -12,18 +12,20 @@ namespace JQueryDataTables.controller
 		public CustomersController (ApplicationsDBContext DbContext)
 		{
 			_dbContext = DbContext;
+
 		}
+		[HttpPost]
 		public IActionResult GetCustomers()
 		{
-			var AllCustomer = _dbContext.Customers.ToList();
+			var pagesize = int.Parse(Request.Form["length"]);
+			var Skip = int.Parse(Request.Form["start"]);
+			var AllCustomer = _dbContext.Customers.Skip(Skip).Take(pagesize).ToList();
+
 			var RecouredsTotal = AllCustomer.Count();
 			var JsonData = new { RecouredFilter = RecouredsTotal, RecouredsTotal, data = AllCustomer };
 			return Ok(JsonData);
 		}
-		public IActionResult index()
-		{
-		   return View();
-		}
+
 
 
 
