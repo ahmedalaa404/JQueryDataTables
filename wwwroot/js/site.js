@@ -7,7 +7,7 @@
         filter: true,
         ajax:
         {
-            "url": "/Customers/GetCustomers",
+            "url": "/customers/GetCustomers",
             "type": "POST",
             "datatype": "json",
         },
@@ -22,6 +22,7 @@
             { "data": "lastName", "name": "LastName", "autowidth": true },
             { "data": "contact", "name": "Contact", "autowidth": true },
             { "data": "email", "name": "Email", "autowidth": true },
+            //{ "data": "birthDate", "name": "BirthDate", "autowidth": true },
             { "data": "birthDate", "name": "BirthDate", "autowidth": true },
             { "render": function (data, type, row) { return '<a href="#"  class="btn btn-danger"  onclick=DeleteCustomer("' + row.id + '") >Delete</a>' }, "orderable": false },
 
@@ -31,3 +32,13 @@
 
 
 });
+
+
+
+
+
+
+
+
+
+

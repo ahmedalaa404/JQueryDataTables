@@ -3,4 +3,31 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+<link href="~/css/jquery.datatables.min.css" rel="stylesheet" />
+
+
+
+
+<table id="example" class="display table table-dark table-borderless text-center">
+    <thead class="text-center">
+        <tr class="text-center">
+            <th>ID</th>
+            <th>FirsetName</th>
+            <th>LastName</th>
+            <th>Contact</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+
+</table>
+
+
+@section Scripts
+	{
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/js/jquery.datatables.min.js"></script>
+
+	<script src="~/js/privacy.js"></script>
+}
