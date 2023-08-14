@@ -1,3 +1,4 @@
+using JQueryDataTables.helper;
 using JQueryDataTables.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,7 +35,9 @@ namespace JQueryDataTables
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
-			if (env.IsDevelopment())
+
+
+            if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 			}
@@ -57,6 +60,9 @@ namespace JQueryDataTables
 					name: "default",
 					pattern: "{controller=Home}/{action=Index}/{id?}");
 			});
-		}
+
+			Seeder.SeedFromJson(app);
+
+        }
 	}
 }
