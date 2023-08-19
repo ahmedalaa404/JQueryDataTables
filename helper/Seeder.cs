@@ -23,7 +23,7 @@ namespace JQueryDataTables.helper
 
             if (! (Context.Customers.Any()))
             {
-                using StreamReader reader = new(@"AHMED.json");
+                using StreamReader reader = new(@"DatSeeder.json");
                 using var textReader = new JsonTextReader(reader) ;
                 var Customers = serializer.Deserialize<List<Customer>>(textReader);
                 Context.Customers.AddRange(Customers);
